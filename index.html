@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='adsgrab' content='39784532dcb24cb03f1e138068b462cf'>
+  <title>Random Phone Number Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .phone-number {
+      font-size: 24px;
+      margin: 20px 0;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Random Phone Number Generator (Under developement)</h1>
+    <div id="phoneNumber" class="phone-number">---</div>
+    <button onclick="generatePhoneNumber()">Generate</button>
+  </div>
+
+  <script>
+    function generatePhoneNumber() {
+      // Generate random phone number format (e.g., (123) 456-7890)
+      const areaCode = Math.floor(Math.random() * 900) + 100; // 100-999
+      const firstPart = Math.floor(Math.random() * 900) + 100; // 100-999
+      const secondPart = Math.floor(Math.random() * 9000) + 1000; // 1000-9999
+
+      const phoneNumber = `(${areaCode}) ${firstPart}-${secondPart}`;
+      document.getElementById('phoneNumber').textContent = phoneNumber;
+    }
+  </script>
+
+</body>
+</html>
